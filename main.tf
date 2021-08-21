@@ -23,7 +23,7 @@ resource "aws_instance" "ubuntu" {
   instance_type = var.instance_type
 
   tags = {
-    Name                 = var.instance_name
+    Name                 = "${var.instance_name}-primary"
     "Linux Distribution" = "Ubuntu"
   }
   
@@ -32,7 +32,7 @@ resource "aws_instance" "ubuntu" {
   instance_type = var.instance_type
 
   tags = {
-    Name                 = "primary-instance"
+    Name                 = "${var.instance_name}-secondary"
     "Linux Distribution" = "Ubuntu"
   }
 }
